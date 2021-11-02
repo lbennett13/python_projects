@@ -30,16 +30,22 @@ def roll_a_character():
     name = input("What is your name adventurer? ")
     #prints a greeting and begins rolling attributes.
     print("Welcome " + name + ", let's roll some attributes: ")
+    sleep(2)
     strength = 6 + roll_a_d6() + roll_a_d6()
     print("STRENGTH: " + str(strength))
+    sleep(1)
     dexterity = 6 + roll_a_d6() + roll_a_d6()
     print("DEXTERITY: " + str(dexterity))
+    sleep(1)
     constitution = 6 + roll_a_d6() + roll_a_d6()
     print("CONSTITUTION: " + str(constitution))
+    sleep(1)
     intelligence = 6 + roll_a_d6() + roll_a_d6()
     print("INTELLIGENCE: " + str(intelligence))
+    sleep(1)
     wisdom = 6 + roll_a_d6() + roll_a_d6()
     print("WISDOM: " + str(wisdom))
+    sleep(1)
     charisma = 6 + roll_a_d6() + roll_a_d6()
     print("CHARISMA: " + str(charisma))
     character_information = {'name': name, 'class':'', 'STR': strength, 'DEX': dexterity, 'CON':constitution, 'INT': intelligence,'WIS': wisdom, 'CHA':charisma}
@@ -185,17 +191,17 @@ while True:
                 dex_check = roll_a_d20(ability_modifiers['DEX'])
                 if dex_check <= 12:
                     damage = roll_a_d4(1)
-                    print("You take " + damage + " points of damage")
+                    print("You take " + str(damage) + " points of damage")
                     adventurer['HP'] -= damage
                 else:
                     print("Your nimbly dodge the arrow. You are not alone. Goblins have returned looking for their next kill.")
             else:
                 print("Try as you might, the beast will not move. As you head back to the caravan, a metal tipped arrow comes whistling toward you.")
                 dex_check = roll_a_d20(ability_modifiers['DEX'])
-                print("You attempt to roll out of the way. " + dex_check)
+                print("You attempt to roll out of the way. " + str(dex_check))
                 if dex_check <= 15:
                     damage = roll_a_d4(1)
-                    print("Unsuccessful. You take " + damage + " points of damage")
+                    print("Unsuccessful. You take " + str(damage) + " points of damage")
                     adventurer['HP'] -= damage
                 else: print("You nimbly dodge the arrow. You are not alone. Goblins have returned looking for their next kill.")
         break
